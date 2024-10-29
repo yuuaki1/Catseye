@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Dialog,
     DialogContent,
@@ -8,8 +10,14 @@ import {
     DialogFooter
   } from "@/components/ui/dialog"
 import { Button } from "../ui/button"
+import { useState } from "react"
 
   export default function LoginTrigger({children}: {children: React.ReactNode}) {
+    const [isOldUser, setIsOldUser] = useState<boolean>(false)
+    const handleClick = () => {
+        setIsOldUser(!isOldUser)
+    }
+
     return (
       <Dialog>
         <DialogTrigger asChild>
@@ -17,15 +25,24 @@ import { Button } from "../ui/button"
                 {children}
             </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w[425px]">
-            <DialogHeader>
+        <DialogContent className="sm:max-w[425px] bg-black text-cyberred flex flex-col items-center justify-center">
+            {isOldUser ? <>
+                <DialogHeader>
                 <DialogTitle>Join Catseye.</DialogTitle>
                 <DialogDescription>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident quo ab velit, vel suscipit reiciendis saepe in possimus ad quae expedita obcaecati quam nam incidunt. Ullam consequatur accusantium rerum eaque.
+                    
                 </DialogDescription>
             </DialogHeader>
+            </> : <>
+            <DialogHeader>
+                <DialogTitle>Welcome Back</DialogTitle>
+                <DialogDescription>
+                    
+                </DialogDescription>
+            </DialogHeader>
+            </>}
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit" onClick={handleClick}>Save changes</Button>
         </DialogFooter>
         </DialogContent>
       </Dialog>
