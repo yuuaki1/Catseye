@@ -1,5 +1,4 @@
 import LoginTrigger from "@/components/assembler/loginmodal";
-import Image from "next/image";
 
 export default function Home() {
   return (
