@@ -6,7 +6,7 @@ export default function Home() {
       Hello
       <div className="mt-20 ml-52">
       <LoginTrigger>
-        Get Started
+        Read more
       </LoginTrigger>
       </div>
     </div>

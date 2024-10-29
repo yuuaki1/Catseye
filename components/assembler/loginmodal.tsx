@@ -11,6 +11,8 @@ import {
   } from "@/components/ui/dialog"
 import { Button } from "../ui/button"
 import { useState } from "react"
+import SignInGoogle from "../signingoogle"
+import SignInGithub from "../signingithub"
 
   export default function LoginTrigger({children}: {children: React.ReactNode}) {
     const [isOldUser, setIsOldUser] = useState<boolean>(false)
@@ -25,24 +27,31 @@ import { useState } from "react"
                 {children}
             </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w[425px] bg-black text-cyberred flex flex-col items-center justify-center">
-            {isOldUser ? <>
-                <DialogHeader>
-                <DialogTitle>Join Catseye.</DialogTitle>
-                <DialogDescription>
-                    
-                </DialogDescription>
+        <DialogContent className="sm:max-w[425px] bg-black text-cyberred flex flex-col items-center justify-center p-20 gap-y-4">
+            {!isOldUser ? <>
+                <DialogHeader className="gap-y-1 items-center">
+                <DialogTitle className="mb-12 text-4xl font-semibold text-white">Join Catseye.</DialogTitle>
+                <SignInGoogle />
+                <SignInGithub />
+             
+                
             </DialogHeader>
             </> : <>
-            <DialogHeader>
-                <DialogTitle>Welcome Back</DialogTitle>
-                <DialogDescription>
-                    
-                </DialogDescription>
+            <DialogHeader className="gap-y-1 items-center">
+                <DialogTitle className="mb-12 text-4xl font-semibold text-white">Welcome Back</DialogTitle>
+                <SignInGoogle />
+                <SignInGithub />
             </DialogHeader>
             </>}
         <DialogFooter>
-          <Button type="submit" onClick={handleClick}>Save changes</Button>
+        {isOldUser ? 
+        <p className="text-white text-sm">
+        Don't have an account? <b onClick={handleClick} className="cursor-pointer hover:underline">Create one</b>
+        </p> : 
+        <p className="text-white text-sm">
+        Already have an account? <b onClick={handleClick} className="cursor-pointer hover:underline">Sign in</b>
+        </p> 
+        }
         </DialogFooter>
         </DialogContent>
       </Dialog>
