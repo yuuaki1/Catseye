@@ -3,7 +3,6 @@
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -46,7 +45,7 @@ import SignInGithub from "../signingithub"
         <DialogFooter>
         {isOldUser ? 
         <p className="text-white text-sm">
-        Don't have an account? <b onClick={handleClick} className="cursor-pointer hover:underline">Create one</b>
+        Dont have an account? <b onClick={handleClick} className="cursor-pointer hover:underline">Create one</b>
         </p> : 
         <p className="text-white text-sm">
         Already have an account? <b onClick={handleClick} className="cursor-pointer hover:underline">Sign in</b>
