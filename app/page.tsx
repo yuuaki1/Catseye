@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import LoginTrigger from "@/components/assembler/loginmodal";
 import SignOut from "@/components/signout";
+import AltHome from "./(page)/page";
 
 export default async function Home() {
   const session = await auth()
@@ -12,9 +13,7 @@ export default async function Home() {
       <LoginTrigger>
         Read more
       </LoginTrigger> : 
-      <SignOut>
-        Had enough?
-        </SignOut>
+      <AltHome />
         }
       </div>
     </div>

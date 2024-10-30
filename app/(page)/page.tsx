@@ -17,11 +17,10 @@ export default function AltHome() {
     return (
     <>
         <div className="text-cybergreen flex flex-col">
-            Hello
-            <div className="mt-20 ml-52">
+            <div className="mt-10 ml-52">
                 {posts.map((post) => {
                     return (
-                        <div key={post.id} className="bg-cyberblue p-4 w-[500px] rounded-md">
+                        <div key={post.id} className="bg-transparent p-4 w-[500px] rounded-md">
                             <h1 className="text-white text-2xl">{post.title}</h1>
                             <p className="text-white">{post.desc}</p>
                         </div>
