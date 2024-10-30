@@ -21,7 +21,7 @@ export default function AltHome() {
                 {posts.map((post) => {
                     return (
                         <div key={post.id} className="bg-transparent p-4 w-[500px] rounded-md">
-                            <h1 className="text-white text-2xl">{post.title}</h1>
+                            <h1 className="text-white text-2xl">{post?.title}</h1>
                             <p className="text-white">{post.desc}</p>
                         </div>
                     )

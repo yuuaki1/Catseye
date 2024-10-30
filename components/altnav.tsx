@@ -18,7 +18,7 @@ export default async function AltNav() {
             </Link>
             </Button>
             <SignOut>
-            <Image src={user?.user?.image} width={30} height={30} className="rounded-full"  alt="user"/>
+            <Image src={user?.user?.image as string} width={30} height={30} className="rounded-full"  alt="user"/>
             </SignOut>
             
         </div>
