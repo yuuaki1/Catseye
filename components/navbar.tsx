@@ -1,3 +1,4 @@
+import Link from "next/link"
 import LoginTrigger from "./assembler/loginmodal"
 
 export default function Navbar() {
@@ -24,7 +25,7 @@ export default function Navbar() {
     ]
     return(
         <div className="flex flex-row text-cyberblue w-screen bg-black h-14 items-center justify-between">
-            <div className="text-cybergreen ml-12">Catseye</div>
+            <div className="text-cybergreen ml-12"><Link href="/">Catseye</Link></div>
             <div className="flex flex-row gap-x-8 items-center">
             <div className=" flex gap-x-4 p-2">
                 {links.map((link) => {

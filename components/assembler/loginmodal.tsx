@@ -11,7 +11,6 @@ import {
 import { Button } from "../ui/button"
 import { useState } from "react"
 import SignInGoogle from "../signingoogle"
-import SignInGithub from "../signingithub"
 
   export default function LoginTrigger({children}: {children: React.ReactNode}) {
     const [isOldUser, setIsOldUser] = useState<boolean>(false)
@@ -31,7 +30,7 @@ import SignInGithub from "../signingithub"
                 <DialogHeader className="gap-y-1 items-center">
                 <DialogTitle className="mb-12 text-4xl font-semibold text-white">Join Catseye.</DialogTitle>
                 <SignInGoogle />
-                <SignInGithub />
+                
              
                 
             </DialogHeader>
@@ -39,7 +38,7 @@ import SignInGithub from "../signingithub"
             <DialogHeader className="gap-y-1 items-center">
                 <DialogTitle className="mb-12 text-4xl font-semibold text-white">Welcome Back</DialogTitle>
                 <SignInGoogle />
-                <SignInGithub />
+                
             </DialogHeader>
             </>}
         <DialogFooter>
