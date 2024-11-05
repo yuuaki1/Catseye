@@ -3,9 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { auth } from "@/auth";
-import Home from "./page";
+
 import AltRootLayout from "./(page)/layout";
-import AltNav from "@/components/altnav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,7 +39,7 @@ export default async function RootLayout({
         </> : 
         <>
         <AltRootLayout>
-        {children}
+          {children}
         </AltRootLayout>
         </>
         }

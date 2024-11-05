@@ -1,8 +1,13 @@
+"use client"
 
 import { logout } from "@/actions/logout"
 import { Button } from "./ui/button"
+
+
+
  
 export default function SignOut({ children } : { children: React.ReactNode }) {
+
   return (
     <form
       action={logout}
